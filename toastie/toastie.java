@@ -15,11 +15,11 @@ public class toastie extends Actor
     public void act() 
     {
         movement();
-      //  hitBread();
+        hitBread();
         // Add your action code here.
     }    
     
-  /*  public void hitBread()
+    public void hitBread()
     {
         if (getWorld() != null)
         {
@@ -27,13 +27,13 @@ public class toastie extends Actor
             if (bread != null)
             {
                 toastland toastWorld = (toastland) getWorld(); 
-                Score scoreCounter = toastland.getScoreCounter();
-                scoreCounter.add(5);
-                getWorld().removeObject(enemy);
-                getWorld().removeObject(this);
+               
+                toastWorld.incrementScore();
+                getWorld().removeObject(bread);
+              
             }
         }
-    }*/
+    }
     
     public void movement()
     {

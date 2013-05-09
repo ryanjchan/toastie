@@ -31,7 +31,7 @@ public class score extends Actor
     }
     public void act() 
     {
-        score++;// Add your action code here.
+        // Add your action code here.
         updateImage();
     }    
     

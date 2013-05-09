@@ -8,7 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class toastland extends World
 {
-
+    life life1 = new life();
+    life life2 = new life();
+    life life3  = new life();
+    score score = new score();
     /**
      * Constructor for objects of class toastland.
      * 
@@ -20,19 +23,24 @@ public class toastland extends World
         populate();
     }
     
+    public void incrementScore()
+    {
+            score.add(10);
+    }
+    
     private void populate()
     {
        
         addObject(new bread(), 321, 544);
         addObject(new bread(), 300, 300);
         
-        addObject(new life(), 60, 43);
-        addObject(new life(), 120, 43);
-        addObject(new life(),180, 43);
+        addObject(life1, 60, 43);
+        addObject(life2, 120, 43);
+        addObject(life3,180, 43);
         
         addObject(new toastie(),299,442);
         
-        addObject(new score(),318 ,43);
+        addObject(score,318 ,43);
    
     }
 }
