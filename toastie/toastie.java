@@ -14,46 +14,64 @@ public class toastie extends Actor
      */
     public void act() 
     {
-        movement();
+        movement(4);
         hitBread();
-        // Add your action code here.
     }    
     
     public void hitBread()
     {
         if (getWorld() != null)
         {
-            Actor bread = getOneObjectAtOffset(0, 0 , bread.class);
-            if (bread != null)
-            {
+            Actor a = getOneIntersectingObject(bread.class);  
+                 
+            if(a != null) 
+            {  
+                getWorld().removeObject(a);
                 toastland toastWorld = (toastland) getWorld(); 
-               
                 toastWorld.incrementScore();
-                getWorld().removeObject(bread);
-              
-            }
+            }                        
+        }
+    }
+    public void hitWall()
+    {
+        Actor wall = getOneIntersectingObject(obstacle.class);
+        if (wall !=null )
+        {
+            World background = getWorld();
+            Greenfoot.stop();
         }
     }
     
-    public void movement()
+    public void move(int xVel, int yVel)
     {
-           
+        Actor wall = getOneIntersectingObject(obstacle.class);
+        if (wall !=null )
+        {
+            setLocation(getX(), getY());
+        } else {
+            setLocation(getX() + xVel, getY() + yVel);
+        }
+        
+        
+    }
+    
+    public void movement(int scale)
+    {   
         if (Greenfoot.isKeyDown("right"))
         {
-            turn(5);
+            move(scale, 0);
         }
         if (Greenfoot.isKeyDown("left"))
         {   
-            turn(-5);
+            move(-scale, 0);
         }
-        //Move fowards
         if(Greenfoot.isKeyDown("up"))
         {
-            move(2);
+            move(0, -scale);
         }
         if(Greenfoot.isKeyDown("down"))
         {
-            move(-2);
+            move(0, scale);
         }
     }
 }
