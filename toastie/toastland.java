@@ -12,6 +12,9 @@ public class toastland extends World
     life life2 = new life();
     life life3  = new life();
     score score = new score();
+    private int breadCount = 5;
+    private int level = 4;
+    private int random = 4;
     /**
      * Constructor for objects of class toastland.
      * 
@@ -23,16 +26,46 @@ public class toastland extends World
         populate();
     }
     
+      public void act() 
+    {
+        if(score.getScore() == 100)
+        {
+            level=6;
+        }
+         if(score.getScore() == 200)
+        {
+            level=8;
+        }
+         if(score.getScore() == 500)
+        {
+            level=10;
+        }
+        
+        random = Greenfoot.getRandomNumber(level);
+        random += 4;
+        
+        if((score.getScore() > 0 && breadCount <= 5))/* && Greenfoot.getRandomNumber(130) < 3)*/ {
+            addObject(new bread(random), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
+            breadCount++;
+        }
+    }
+
+    
     public void incrementScore()
     {
             score.add(10);
+            breadCount--;
     }
     
     private void populate()
     {
        
-        addObject(new bread(), 321, 544);
-        addObject(new bread(), 300, 300);
+        addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
+         addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
+          addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
+           addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
+            addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
+          
         
         addObject(life1, 60, 43);
         addObject(life2, 120, 43);
