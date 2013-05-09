@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Wed May 08 01:06:36 PDT 2013
+#Wed May 08 14:50:08 PDT 2013
 target4.type=ClassTarget
 target3.height=50
 target5.height=50
@@ -37,9 +37,9 @@ class.life.image=herz.png
 target1.naviview.expanded=true
 target2.editor.y=20
 target2.height=50
-target5.y=70
 target2.editor.x=40
 target4.height=50
+target5.y=70
 target5.x=160
 target1.name=life
 class.Score.superclass=greenfoot.Actor
@@ -72,13 +72,13 @@ target4.width=80
 dependency2.from=toastland
 dependency2.type=UsesDependency
 world.lastInstantiated=toastland
-mainWindow.height=860
 target2.showInterface=false
+mainWindow.height=860
 target3.name=bread
 target1.editor.width=900
 class.bread.image=bread.png
-class.toastland.superclass=greenfoot.World
 target3.naviview.expanded=true
-project.charset=UTF-8
+class.toastland.superclass=greenfoot.World
 target3.width=80
+project.charset=UTF-8
 target4.showInterface=false

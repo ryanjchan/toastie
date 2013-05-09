@@ -6,18 +6,18 @@ import java.awt.Font;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Score extends Actor
+public class score extends Actor
 {
 
     private int score = 0;
     private String text;
     private int StringLength;
     
-    public Score()
+    public score()
     {
         this("");
     }
-   public Score(String prefix)
+   public score(String prefix)
     {
         text = prefix;
         StringLength = (text.length() +2 ) *20;
@@ -35,6 +35,14 @@ public class Score extends Actor
         updateImage();
     }    
     
+     public void add(int num)
+    {
+        score+=num;
+    }
+      public int getScore()
+    {
+        return score;
+    }
         private void updateImage()
     {
         GreenfootImage image = getImage();

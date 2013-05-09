@@ -15,7 +15,7 @@ public class bread extends Actor
     public void act() 
     {
         movement();
-        move(1);
+        move(3);
         
         
         

@@ -29,6 +29,10 @@ public class toastland extends World
         addObject(new life(), 60, 43);
         addObject(new life(), 120, 43);
         addObject(new life(),180, 43);
+        
+        addObject(new toastie(),299,442);
+        
+        addObject(new score(),318 ,43);
    
     }
 }
