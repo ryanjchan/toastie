@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class enemy extends Actor
 {
     private int speed = 2;
+    int max = 8;
     /**
      * Act - do whatever the enemy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -33,6 +34,7 @@ public class enemy extends Actor
                 getWorld().removeObject(a);
                 toastland toastWorld = (toastland) getWorld(); 
                 toastWorld.incrementScore();
+                if(speed < max)
                 speed++;
             }                        
         }
@@ -68,8 +70,10 @@ public class enemy extends Actor
         {
             
             turn(90);
+            move(2);
         } else if(num == 199){
             turn(270);
+            move(2);
         }
         if(edge())
         {
