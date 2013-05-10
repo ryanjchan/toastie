@@ -25,7 +25,6 @@ public class toastie extends Actor
         movement(4);
         hitEnemy();
         hitBread();
-        
     }    
     
      public void hitEnemy()

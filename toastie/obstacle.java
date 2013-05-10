@@ -9,19 +9,18 @@ import java.awt.Color;
  */
 public class obstacle extends Actor
 {
-    /**
-     * Act - do whatever the obstacle wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void obstacle()
+    int width = 50;
+    int height = 200;
+    
+    public void obstacle(int width, int height)
     {
-
+        width = width;
+        height = height;
     }
     public void act() 
     {
-        // Add       
         GreenfootImage image;
-        image = new GreenfootImage(50, 200);  
+        image = new GreenfootImage(width, height);  
         image.setColor(Color.BLUE);  
         image.fillRect(0, 0, image.getWidth(), image.getHeight());  
         this.setImage(image);

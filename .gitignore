@@ -6,6 +6,7 @@
 *.war
 *.ear
  
+toastie/project.greenfoot
 # OS generated files #
 .DS_Store*
 ehthumbs.db
