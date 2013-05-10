@@ -12,16 +12,47 @@ public class bread extends Actor
      * Act - do whatever the bagels wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    private int speed = 6;
+    
+    public bread()
+    {
+            speed = 5;
+    }
+    public bread(int speed)
+    {
+        this.speed = speed;
+    }
     public void act() 
     {
+        hitObstacle();
         movement();
-        move(3);
+        move(speed);
+        
         
         
         
         // Add your action code here.
     }    
+      public void hitObstacle()
+    {
+        if (getWorld() != null)
+        {
+            Actor a = getOneIntersectingObject(obstacle.class);  
+                 
+            if(a != null) 
+            {  
+                turn(180);
+                move(5);
+           
+            }                        
+        }
+    }
     
+    public void incrementSpeed(int increment)
+    {
+        speed=increment;
+    }
     public void movement()
     {
         int num = Greenfoot.getRandomNumber(200);

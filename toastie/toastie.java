@@ -23,9 +23,23 @@ public class toastie extends Actor
     public void act() 
     {
         movement(4);
+        hitEnemy();
         hitBread();
+        
     }    
     
+     public void hitEnemy()
+    {
+        if (getWorld() != null)
+        {
+            Actor a = getOneIntersectingObject(enemy.class);  
+                 
+            if(a != null) 
+            {  
+                Greenfoot.stop();
+            }                        
+        }
+    }
     public void hitBread()
     {
         if (getWorld() != null)
