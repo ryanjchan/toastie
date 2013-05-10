@@ -6,18 +6,18 @@ import java.awt.Font;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class score extends Actor
+public class Score extends Actor
 {
 
     private int score = 0;
     private String text;
     private int StringLength;
     
-    public score()
+    public Score()
     {
         this("");
     }
-   public score(String prefix)
+   public Score(String prefix)
     {
         text = prefix;
         StringLength = (text.length() +2 ) *30;

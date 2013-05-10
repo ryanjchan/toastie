@@ -8,13 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class toastland extends World
 {
-    life life1 = new life();
-    life life2 = new life();
-    life life3  = new life();
-    score score = new score();
+    
+    Score score = new Score();
     private int breadCount = 5;
     private int level = 4;
     private int random = 4;
+    private int lives = 3;
     /**
      * Constructor for objects of class toastland.
      * 
@@ -40,7 +39,10 @@ public class toastland extends World
         {
             level=10;
         }
-        
+        if(score.getScore() == 1000)
+        {
+             addObject(new enemy(),  Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
+        }
         random = Greenfoot.getRandomNumber(level);
         random += 4;
         
@@ -50,12 +52,14 @@ public class toastland extends World
         }
     }
 
+   
     
     public void incrementScore()
     {
             score.add(10);
             breadCount--;
     }
+    
     
     private void populate()
     {
@@ -68,16 +72,14 @@ public class toastland extends World
         addObject(new enemy(),  Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
           
         
-        addObject(life1, 60, 43);
-        addObject(life2, 120, 43);
-        addObject(life3,180, 43);
+            
+        
         
         addObject(new toastie(),299,442);
 
-        addObject(new obstacle(), 600, 300);
-        addObject(new obstacle(), 200, 300);
+        addObject(new obstacle(), 300, 300);
         
-        addObject(score,318 ,43);
+        addObject(score,430 ,43);
    
     }
 }
