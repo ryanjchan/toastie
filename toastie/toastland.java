@@ -40,7 +40,7 @@ public class toastland extends World
         
         addObject(new toastie(),299,442);
 
-        addObject(new obstacle(), 100, 100);
+        addObject(new obstacle(), 300, 300);
         
         addObject(score,318 ,43);
    

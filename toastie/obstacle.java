@@ -15,15 +15,16 @@ public class obstacle extends Actor
      */
     public void obstacle()
     {
-        GreenfootImage image;  
-        image = new GreenfootImage(20, 20);  
-        image.setColor(Color.RED);  
-        image.fillRect(0, 0, image.getWidth(), image.getHeight());  
-        setImage(image);
+
     }
     public void act() 
     {
-        // Add your action code here.
+        // Add       
+        GreenfootImage image;
+        image = new GreenfootImage(50, 200);  
+        image.setColor(Color.BLUE);  
+        image.fillRect(0, 0, image.getWidth(), image.getHeight());  
+        this.setImage(image);
     }    
 
     

@@ -43,7 +43,7 @@ public class score extends Actor
     {
         return score;
     }
-        private void updateImage()
+    private void updateImage()
     {
         GreenfootImage image = getImage();
         image.clear();

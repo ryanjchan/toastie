@@ -12,6 +12,14 @@ public class toastie extends Actor
      * Act - do whatever the toastie wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    int lastX = 0;
+    int lastY = 0;
+    String vector = "";
+    
+    public void toastie() {
+        lastX = getX();
+        lastY = getY();
+    }
     public void act() 
     {
         movement(4);
@@ -32,24 +40,53 @@ public class toastie extends Actor
             }                        
         }
     }
-    public void hitWall()
-    {
-        Actor wall = getOneIntersectingObject(obstacle.class);
-        if (wall !=null )
-        {
-            World background = getWorld();
-            Greenfoot.stop();
-        }
-    }
+
     
-    public void move(int xVel, int yVel)
+    public void move(int xVel, int yVel, String direction)
     {
         Actor wall = getOneIntersectingObject(obstacle.class);
+        
+        int currentX  = getX();
+        int currentY  = getY();
+        int newX = currentX  + xVel;
+        int newY = currentY  + yVel;
         if (wall !=null )
         {
-            setLocation(getX(), getY());
-        } else {
+            if (vector == "right") {
+                if (newX > currentX) {
+                    setLocation(currentX, newY);
+                } else {
+                    setLocation(newX, newY);
+                }
+            }
+            if (vector == "left") {
+                if (newX < currentX) {
+                    setLocation(currentX, newY);
+                } else {
+                    setLocation(newX, newY);
+                }
+            }
+            if (vector == "up") {
+                if (newY < currentY) {
+                    setLocation(newX, currentY);
+                } else {
+                    setLocation(newX, newY);
+                }
+            }
+             if (vector == "down") {
+                if (newY > currentY) {
+                    setLocation(newX, currentY);
+                } else {
+                    setLocation(newX, newY);
+                }
+            }
+            
+        } else {            
             setLocation(getX() + xVel, getY() + yVel);
+            if(direction.length() != 0) {
+                vector = direction;
+            }
+        
         }
         
         
@@ -57,21 +94,32 @@ public class toastie extends Actor
     
     public void movement(int scale)
     {   
+        String direction = "";
+        int x = 0;
+        int y = 0;
         if (Greenfoot.isKeyDown("right"))
         {
-            move(scale, 0);
+            direction = "right";
+            x = scale;            
         }
-        if (Greenfoot.isKeyDown("left"))
+        else if (Greenfoot.isKeyDown("left"))
         {   
-            move(-scale, 0);
+            direction = "left";
+            x = -scale;
         }
-        if(Greenfoot.isKeyDown("up"))
+        else if(Greenfoot.isKeyDown("up"))
         {
-            move(0, -scale);
+            direction = "up";
+            y = -scale;
         }
-        if(Greenfoot.isKeyDown("down"))
+        else if(Greenfoot.isKeyDown("down"))
         {
-            move(0, scale);
+            direction = "down";
+            y = scale;
         }
+        //System.out.println("last: " + lastX  + ", " + lastY);
+        //System.out.println("vector: " + vector);
+        //System.out.println("direction: " + direction);        
+        move(x, y, direction);        
     }
 }
