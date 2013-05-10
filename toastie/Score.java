@@ -20,7 +20,7 @@ public class score extends Actor
    public score(String prefix)
     {
         text = prefix;
-        StringLength = (text.length() +2 ) *20;
+        StringLength = (text.length() +2 ) *30;
        
         setImage(new GreenfootImage(StringLength, 24));
         GreenfootImage image = getImage();

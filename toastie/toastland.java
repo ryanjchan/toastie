@@ -61,10 +61,11 @@ public class toastland extends World
     {
        
         addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
-         addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
-          addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
-           addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
-            addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
+        addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
+        addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
+        addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
+        addObject(new bread(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
+        addObject(new enemy(),  Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
           
         
         addObject(life1, 60, 43);

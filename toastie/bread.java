@@ -25,13 +25,29 @@ public class bread extends Actor
     }
     public void act() 
     {
+        hitObstacle();
         movement();
         move(speed);
         
         
         
+        
         // Add your action code here.
     }    
+      public void hitObstacle()
+    {
+        if (getWorld() != null)
+        {
+            Actor a = getOneIntersectingObject(obstacle.class);  
+                 
+            if(a != null) 
+            {  
+                turn(180);
+                move(5);
+           
+            }                        
+        }
+    }
     
     public void incrementSpeed(int increment)
     {
