@@ -36,7 +36,7 @@ public class toastie extends Actor
                  
             if(a != null) 
             {  
-                Greenfoot.stop();
+
             }                        
         }
     }
@@ -116,17 +116,17 @@ public class toastie extends Actor
             direction = "right";
             x = scale;            
         }
-        else if (Greenfoot.isKeyDown("left"))
+        if (Greenfoot.isKeyDown("left"))
         {   
             direction = "left";
             x = -scale;
         }
-        else if(Greenfoot.isKeyDown("up"))
+        if(Greenfoot.isKeyDown("up"))
         {
             direction = "up";
             y = -scale;
         }
-        else if(Greenfoot.isKeyDown("down"))
+        if(Greenfoot.isKeyDown("down"))
         {
             direction = "down";
             y = scale;

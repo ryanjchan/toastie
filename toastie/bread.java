@@ -13,11 +13,11 @@ public class bread extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    private int speed = 6;
+    private int speed = 3;
     
     public bread()
     {
-            speed = 5;
+            speed = 3;
     }
     public bread(int speed)
     {
@@ -31,7 +31,7 @@ public class bread extends Actor
         
         
         
-        
+
         // Add your action code here.
     }    
       public void hitObstacle()
@@ -51,7 +51,7 @@ public class bread extends Actor
     
     public void incrementSpeed(int increment)
     {
-        speed=increment;
+        speed = increment;
     }
     public void movement()
     {
